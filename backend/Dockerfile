@@ -13,11 +13,8 @@ RUN npm install
 # Copy the rest of the backend source code
 COPY . .
 
-# Install ts-node globally for running TypeScript directly
-RUN npm install -g ts-node typescript
-
 # Expose the backend port
 EXPOSE 5000
 
-# Start the server
+# Start the server using ts-node from local node_modules
 CMD ["npx", "ts-node", "src/server.ts"]
